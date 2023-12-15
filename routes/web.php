@@ -1,5 +1,9 @@
 <?php
 
+use App\Http\Controllers\CategoriaController;
+use App\Http\Controllers\PermisoController;
+use App\Http\Controllers\ProductoController;
+use App\Http\Controllers\RoleController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,7 +18,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('auth.login');
+    return view('welcome');
 });
 
 Route::middleware([
@@ -25,4 +29,8 @@ Route::middleware([
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
+    Route::resource('/producto', ProductoController::class)->names('producto');
+    Route::resource('/categoria', CategoriaController::class)->names('categoria');
+    Route::resource('/roles', RoleController::class)->names('roles');
+    Route::resource('/permisos', PermisoController::class)->names('permisos');
 });
