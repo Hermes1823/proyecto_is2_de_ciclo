@@ -9,6 +9,13 @@
 @section('content')
     <p>Welcome to this beautiful admin panel.</p>
     <div class="card">
+        @role('Gerente de Almacen')
+            <div class="card-header">
+                <a href="{{route('categoria.create')}}" class="btn btn-primary float-right mt-2 mr-2" >
+                    Nuevo
+                </a>
+            </div>
+        @endrole
         <div class="card-body">
             {{-- Setup data for datatables --}}
             @php
@@ -40,13 +47,14 @@
                             <a href="{{route('categoria.edit',$categoria)}}" class="btn btn-xs btn-default text-primary mx-1 shadow" title="Edit">
                                 <i class="fa fa-lg fa-fw fa-pen"></i>
                             </a>
-
+                            @role('Gerente de Almacen')
                             <form style='display: inline' action="{{ route('categoria.destroy', $categoria) }}" method="post"
                                 class="forEliminar">
                                 @csrf
                                 @method('delete')
                                 {!! $btnDelete !!}
                             </form>
+                            @endrole
 
                         </td>
                     </tr>

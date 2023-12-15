@@ -329,6 +329,11 @@ return [
             'icon_color' => 'yellow',
             'route'        => 'permisos.index',
         ],
+        [
+            'text'       => 'Usuarios',
+            'icon_color' => 'yellow',
+            'route'        => 'asignar.index',
+        ],
        
         ['header' => 'PRODUCTOS'],
         [
@@ -341,6 +346,19 @@ return [
             'route'  => 'producto.create',
             'icon' => 'fas fa-fw fa-lock',
         ],
+
+        ['header' => 'OFERTAS PRODUCTOS'],
+        [
+            'text' => 'lISTA DE OFERTAS',
+            'route'  => 'oferta.index',
+            'icon' => 'fas fa-fw fa-user',
+        ],
+        [
+            'text' => 'NUEVO OFERTA',
+            'route'  => 'oferta.create',
+            'icon' => 'fas fa-fw fa-lock',
+        ],
+
         [
             'text'    => 'multilevel',
             'icon'    => 'fas fa-fw fa-share',
